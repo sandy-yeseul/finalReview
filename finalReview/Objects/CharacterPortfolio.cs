@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,18 @@ namespace finalReview.Objects
         CharacterPortfolio()
         {
             Skills = new List<Skill>();
-            this.Identity = new Identity();
+            
+
+            string[] firstNames = File.ReadAllLines(@"..\..\Data\firstNames.txt");
+            string[] lastNames = File.ReadAllLines(@"..\..\Data\lastNames.txt");
+
+            Random fNameRand = new Random();
+            string fName = firstNames[fNameRand.Next(0, firstNames.Length - 1)];
+            Random lNameRand = new Random();
+            string lName = lastNames[lNameRand.Next(0, lastNames.Length - 1)];
+
+            this.Identity = new Identity(fName, lName);
+
         }
     }
 }

@@ -57,16 +57,7 @@ namespace finalReview
         private void GeneratesNameButton_Click(object sender, EventArgs e)
         {
             
-            string[] firstNames = File.ReadAllLines(@"..\..\Data\firstNames.txt");
-            string[] lastNames = File.ReadAllLines(@"..\..\Data\lastNames.txt");
-
-            Random fNameRand = new Random();
-            string fName = firstNames[fNameRand.Next(0, firstNames.Length - 1)];
-            FirstNameDataLabel.Text = fName;
-
-            Random lNameRand = new Random();
-            string lName = lastNames[lNameRand.Next(0, lastNames.Length - 1)];
-            LastNameDataLabel.Text = lName;
+            
 
         }
     }

@@ -13,5 +13,11 @@ namespace finalReview.Objects
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+        public Identity(string fname, string lname)
+        {
+            FirstName = fname;
+            LastName = lname;
+        }
     }
 }
