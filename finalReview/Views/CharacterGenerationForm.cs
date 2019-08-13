@@ -100,7 +100,25 @@ namespace finalReview
         /// <param name="e"></param>
         private void GenerateSkillsButton_Click(object sender, EventArgs e)
         {
-
+            Random rand = new Random();
+            string[] skills = File.ReadAllLines(@"..\..\Data\skills.txt");
+            string firstSkillNam = skills[rand.Next(0, skills.Length - 1)];
+            string secondSkillNam = skills[rand.Next(0, skills.Length - 1)];
+            if (secondSkillNam == firstSkillNam)
+            {
+                while(secondSkillNam != firstSkillNam)
+                {
+                    secondSkillNam = skills[rand.Next(0, skills.Length - 1)];
+                }
+            }
+            string firstSkillLev = "" + rand.Next(0, 10);
+            string secondSkillLev = "" + rand.Next(0, 10);
+            FirstSkillNameDataLabel.Text = firstSkillNam;
+            FirstSkillLevelDataLabel.Text = firstSkillLev;
+            SecondSkillNameDataLabel.Text = secondSkillNam;
+            SecondSkillLevelDataLabel.Text = secondSkillLev;
+            CharacterPortfolio characterPortfolio = new CharacterPortfolio(firstSkillNam, firstSkillLev);
+            characterPortfolio = new CharacterPortfolio(secondSkillNam, secondSkillLev);
         }
     }
 }

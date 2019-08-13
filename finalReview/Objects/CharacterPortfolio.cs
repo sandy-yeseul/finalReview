@@ -40,5 +40,11 @@ namespace finalReview.Objects
             Education = education;
             SocialStanding = socialStanding;
         }
+        public CharacterPortfolio(string name, int level)
+        {
+            Skills = new List<Skill>();
+            Skill skill = new Skill(name, level);
+            Skills.Add(skill);
+        }
     }
 }
