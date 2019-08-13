@@ -1,8 +1,10 @@
-﻿using System;
+﻿using finalReview.Objects;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 /*
@@ -40,6 +42,32 @@ namespace finalReview
             {
                 MainTabControl.SelectedIndex++;
             }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        /// <summary>
+        /// This is event handler for generating names
+        /// Read the files and create array, generate random numbers and make random name.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GeneratesNameButton_Click(object sender, EventArgs e)
+        {
+            
+            string[] firstNames = File.ReadAllLines(@"..\..\Data\firstNames.txt");
+            string[] lastNames = File.ReadAllLines(@"..\..\Data\lastNames.txt");
+
+            Random fNameRand = new Random();
+            string fName = firstNames[fNameRand.Next(0, firstNames.Length - 1)];
+            FirstNameDataLabel.Text = fName;
+
+            Random lNameRand = new Random();
+            string lName = lastNames[lNameRand.Next(0, lastNames.Length - 1)];
+            LastNameDataLabel.Text = lName;
+
         }
     }
 }
