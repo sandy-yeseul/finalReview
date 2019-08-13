@@ -56,8 +56,50 @@ namespace finalReview
         /// <param name="e"></param>
         private void GeneratesNameButton_Click(object sender, EventArgs e)
         {
-            
-            
+
+            string[] firstNames = File.ReadAllLines(@"..\..\Data\firstNames.txt");
+            string[] lastNames = File.ReadAllLines(@"..\..\Data\lastNames.txt");
+
+            Random rand = new Random();
+            string fName = firstNames[rand.Next(0, firstNames.Length - 1)];
+            string lName = lastNames[rand.Next(0, lastNames.Length - 1)];
+
+            FirstNameDataLabel.Text = fName;
+            LastNameDataLabel.Text = lName;
+
+            CharacterPortfolio characterPortfolio = new CharacterPortfolio(fName, lName);
+
+        }
+        /// <summary>
+        /// This is event handler to generate random abilities level
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GenerateAbilitiesButton_Click(object sender, EventArgs e)
+        {
+            Random rand = new Random();
+
+            string strength = ""+ rand.Next(0, 10);
+            StrengthDataLabel.Text = strength;
+            string dexeterity = "" + rand.Next(0, 10);
+            DexeterityDataLabel.Text = dexeterity;
+            string endurance = "" + rand.Next(0, 10);
+            EnduranceDataLabel.Text = endurance;
+            string intellect = "" + rand.Next(0, 10);
+            IntellectDataLabel.Text = intellect;
+            string education = "" + rand.Next(0, 10);
+            EducationDataLabel.Text = education;
+            string socialStanding = "" + rand.Next(0, 10);
+            SocialstandingDataLabel.Text = socialStanding;
+            CharacterPortfolio characterPortfolio = new CharacterPortfolio(strength, dexeterity, endurance, intellect, education, socialStanding);
+        }
+        /// <summary>
+        /// This is event handler for generating random skills
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GenerateSkillsButton_Click(object sender, EventArgs e)
+        {
 
         }
     }

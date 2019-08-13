@@ -19,29 +19,26 @@ namespace finalReview.Objects
         public string Strength { get; set; }
         public string Dexterity { get; set; }
         public string Endurance { get; set; }
-        public string Interllect { get; set; }
+        public string Intellect { get; set; }
         public string Education { get; set; }
-        public string Socialstanding { get; set; }
+        public string SocialStanding { get; set; }
 
         //skill list
         List<Skill> Skills;
 
         //constructor
-        CharacterPortfolio()
+        public CharacterPortfolio(string fName, string lName)
         {
-            Skills = new List<Skill>();
-            
-
-            string[] firstNames = File.ReadAllLines(@"..\..\Data\firstNames.txt");
-            string[] lastNames = File.ReadAllLines(@"..\..\Data\lastNames.txt");
-
-            Random fNameRand = new Random();
-            string fName = firstNames[fNameRand.Next(0, firstNames.Length - 1)];
-            Random lNameRand = new Random();
-            string lName = lastNames[lNameRand.Next(0, lastNames.Length - 1)];
-
             this.Identity = new Identity(fName, lName);
-
+        }
+        public CharacterPortfolio(string strength, string dexterity, string endurance, string intellect, string education, string socialStanding)
+        {
+            Strength = strength;
+            Dexterity = dexterity;
+            Endurance = endurance;
+            Intellect = intellect;
+            Education = education;
+            SocialStanding = socialStanding;
         }
     }
 }

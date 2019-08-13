@@ -53,6 +53,7 @@
             this.EducationDataLabel = new System.Windows.Forms.Label();
             this.SocialstandingDataLabel = new System.Windows.Forms.Label();
             this.SkillsPage = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.CharacterSheetPage = new System.Windows.Forms.TabPage();
             this.MainToolStrip = new System.Windows.Forms.ToolStrip();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -69,11 +70,18 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NextButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
+            this.FirstSkillLabel = new System.Windows.Forms.Label();
+            this.SecondSkillLabel = new System.Windows.Forms.Label();
+            this.GenerateSkillsButton = new System.Windows.Forms.Button();
+            this.FirstSkillDataLabel = new System.Windows.Forms.Label();
+            this.SecondSkillDataLabel = new System.Windows.Forms.Label();
             this.MainTabControl.SuspendLayout();
             this.IdentityPage.SuspendLayout();
             this.IdentityTableLayoutPannel.SuspendLayout();
             this.AbilityPage.SuspendLayout();
             this.AbilitiesTableLayoutPanel.SuspendLayout();
+            this.SkillsPage.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.CharacterSheetPage.SuspendLayout();
             this.MainToolStrip.SuspendLayout();
             this.MainMenuStrip.SuspendLayout();
@@ -87,20 +95,18 @@
             this.MainTabControl.Controls.Add(this.CharacterSheetPage);
             this.MainTabControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.MainTabControl.Location = new System.Drawing.Point(0, 0);
-            this.MainTabControl.Margin = new System.Windows.Forms.Padding(4);
             this.MainTabControl.Name = "MainTabControl";
             this.MainTabControl.SelectedIndex = 0;
-            this.MainTabControl.Size = new System.Drawing.Size(998, 540);
+            this.MainTabControl.Size = new System.Drawing.Size(784, 447);
             this.MainTabControl.TabIndex = 0;
             // 
             // IdentityPage
             // 
             this.IdentityPage.Controls.Add(this.IdentityTableLayoutPannel);
-            this.IdentityPage.Location = new System.Drawing.Point(4, 38);
-            this.IdentityPage.Margin = new System.Windows.Forms.Padding(4);
+            this.IdentityPage.Location = new System.Drawing.Point(4, 33);
             this.IdentityPage.Name = "IdentityPage";
-            this.IdentityPage.Padding = new System.Windows.Forms.Padding(4);
-            this.IdentityPage.Size = new System.Drawing.Size(990, 498);
+            this.IdentityPage.Padding = new System.Windows.Forms.Padding(3);
+            this.IdentityPage.Size = new System.Drawing.Size(776, 410);
             this.IdentityPage.TabIndex = 0;
             this.IdentityPage.Text = "Identity";
             this.IdentityPage.UseVisualStyleBackColor = true;
@@ -117,15 +123,14 @@
             this.IdentityTableLayoutPannel.Controls.Add(this.LastNameLabel, 0, 1);
             this.IdentityTableLayoutPannel.Controls.Add(this.FirstNameDataLabel, 1, 0);
             this.IdentityTableLayoutPannel.Controls.Add(this.LastNameDataLabel, 1, 1);
-            this.IdentityTableLayoutPannel.Location = new System.Drawing.Point(0, 4);
-            this.IdentityTableLayoutPannel.Margin = new System.Windows.Forms.Padding(4);
+            this.IdentityTableLayoutPannel.Location = new System.Drawing.Point(0, 3);
             this.IdentityTableLayoutPannel.Name = "IdentityTableLayoutPannel";
             this.IdentityTableLayoutPannel.RowCount = 4;
             this.IdentityTableLayoutPannel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.IdentityTableLayoutPannel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.IdentityTableLayoutPannel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.IdentityTableLayoutPannel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.IdentityTableLayoutPannel.Size = new System.Drawing.Size(977, 414);
+            this.IdentityTableLayoutPannel.Size = new System.Drawing.Size(768, 343);
             this.IdentityTableLayoutPannel.TabIndex = 0;
             // 
             // FirstNameLabel
@@ -134,10 +139,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FirstNameLabel.AutoSize = true;
-            this.FirstNameLabel.Location = new System.Drawing.Point(4, 0);
-            this.FirstNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.FirstNameLabel.Location = new System.Drawing.Point(3, 0);
             this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(236, 103);
+            this.FirstNameLabel.Size = new System.Drawing.Size(186, 85);
             this.FirstNameLabel.TabIndex = 0;
             this.FirstNameLabel.Text = "First Name";
             this.FirstNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -148,10 +152,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.IdentityTableLayoutPannel.SetColumnSpan(this.GeneratesNameButton, 2);
-            this.GeneratesNameButton.Location = new System.Drawing.Point(492, 313);
-            this.GeneratesNameButton.Margin = new System.Windows.Forms.Padding(4);
+            this.GeneratesNameButton.Location = new System.Drawing.Point(387, 258);
             this.GeneratesNameButton.Name = "GeneratesNameButton";
-            this.GeneratesNameButton.Size = new System.Drawing.Size(481, 97);
+            this.GeneratesNameButton.Size = new System.Drawing.Size(378, 82);
             this.GeneratesNameButton.TabIndex = 1;
             this.GeneratesNameButton.Text = "Generate Name";
             this.GeneratesNameButton.UseVisualStyleBackColor = true;
@@ -163,10 +166,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LastNameLabel.AutoSize = true;
-            this.LastNameLabel.Location = new System.Drawing.Point(4, 103);
-            this.LastNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LastNameLabel.Location = new System.Drawing.Point(3, 85);
             this.LastNameLabel.Name = "LastNameLabel";
-            this.LastNameLabel.Size = new System.Drawing.Size(236, 103);
+            this.LastNameLabel.Size = new System.Drawing.Size(186, 85);
             this.LastNameLabel.TabIndex = 0;
             this.LastNameLabel.Text = "Last Name";
             this.LastNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -180,10 +182,9 @@
             this.FirstNameDataLabel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.FirstNameDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IdentityTableLayoutPannel.SetColumnSpan(this.FirstNameDataLabel, 3);
-            this.FirstNameDataLabel.Location = new System.Drawing.Point(248, 0);
-            this.FirstNameDataLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.FirstNameDataLabel.Location = new System.Drawing.Point(195, 0);
             this.FirstNameDataLabel.Name = "FirstNameDataLabel";
-            this.FirstNameDataLabel.Size = new System.Drawing.Size(725, 103);
+            this.FirstNameDataLabel.Size = new System.Drawing.Size(570, 85);
             this.FirstNameDataLabel.TabIndex = 0;
             this.FirstNameDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -196,21 +197,19 @@
             this.LastNameDataLabel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.LastNameDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IdentityTableLayoutPannel.SetColumnSpan(this.LastNameDataLabel, 3);
-            this.LastNameDataLabel.Location = new System.Drawing.Point(248, 103);
-            this.LastNameDataLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LastNameDataLabel.Location = new System.Drawing.Point(195, 85);
             this.LastNameDataLabel.Name = "LastNameDataLabel";
-            this.LastNameDataLabel.Size = new System.Drawing.Size(725, 103);
+            this.LastNameDataLabel.Size = new System.Drawing.Size(570, 85);
             this.LastNameDataLabel.TabIndex = 0;
             this.LastNameDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // AbilityPage
             // 
             this.AbilityPage.Controls.Add(this.AbilitiesTableLayoutPanel);
-            this.AbilityPage.Location = new System.Drawing.Point(4, 38);
-            this.AbilityPage.Margin = new System.Windows.Forms.Padding(4);
+            this.AbilityPage.Location = new System.Drawing.Point(4, 33);
             this.AbilityPage.Name = "AbilityPage";
-            this.AbilityPage.Padding = new System.Windows.Forms.Padding(4);
-            this.AbilityPage.Size = new System.Drawing.Size(990, 498);
+            this.AbilityPage.Padding = new System.Windows.Forms.Padding(3);
+            this.AbilityPage.Size = new System.Drawing.Size(776, 410);
             this.AbilityPage.TabIndex = 1;
             this.AbilityPage.Text = "Abilities";
             this.AbilityPage.UseVisualStyleBackColor = true;
@@ -235,8 +234,7 @@
             this.AbilitiesTableLayoutPanel.Controls.Add(this.IntellectDataLabel, 1, 3);
             this.AbilitiesTableLayoutPanel.Controls.Add(this.EducationDataLabel, 1, 4);
             this.AbilitiesTableLayoutPanel.Controls.Add(this.SocialstandingDataLabel, 1, 5);
-            this.AbilitiesTableLayoutPanel.Location = new System.Drawing.Point(11, 8);
-            this.AbilitiesTableLayoutPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.AbilitiesTableLayoutPanel.Location = new System.Drawing.Point(9, 7);
             this.AbilitiesTableLayoutPanel.Name = "AbilitiesTableLayoutPanel";
             this.AbilitiesTableLayoutPanel.RowCount = 8;
             this.AbilitiesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
@@ -247,7 +245,7 @@
             this.AbilitiesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.AbilitiesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.AbilitiesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.AbilitiesTableLayoutPanel.Size = new System.Drawing.Size(966, 480);
+            this.AbilitiesTableLayoutPanel.Size = new System.Drawing.Size(759, 397);
             this.AbilitiesTableLayoutPanel.TabIndex = 0;
             // 
             // StrengthDataLabel
@@ -258,10 +256,9 @@
             this.StrengthDataLabel.AutoSize = true;
             this.StrengthDataLabel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.StrengthDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.StrengthDataLabel.Location = new System.Drawing.Point(342, 0);
-            this.StrengthDataLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.StrengthDataLabel.Location = new System.Drawing.Point(268, 0);
             this.StrengthDataLabel.Name = "StrengthDataLabel";
-            this.StrengthDataLabel.Size = new System.Drawing.Size(185, 60);
+            this.StrengthDataLabel.Size = new System.Drawing.Size(145, 49);
             this.StrengthDataLabel.TabIndex = 2;
             this.StrengthDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -271,10 +268,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DexeterityLabel.AutoSize = true;
-            this.DexeterityLabel.Location = new System.Drawing.Point(4, 60);
-            this.DexeterityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DexeterityLabel.Location = new System.Drawing.Point(3, 49);
             this.DexeterityLabel.Name = "DexeterityLabel";
-            this.DexeterityLabel.Size = new System.Drawing.Size(330, 60);
+            this.DexeterityLabel.Size = new System.Drawing.Size(259, 49);
             this.DexeterityLabel.TabIndex = 6;
             this.DexeterityLabel.Text = "Dexeterity";
             this.DexeterityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -285,10 +281,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StrengthLabel.AutoSize = true;
-            this.StrengthLabel.Location = new System.Drawing.Point(4, 0);
-            this.StrengthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.StrengthLabel.Location = new System.Drawing.Point(3, 0);
             this.StrengthLabel.Name = "StrengthLabel";
-            this.StrengthLabel.Size = new System.Drawing.Size(330, 60);
+            this.StrengthLabel.Size = new System.Drawing.Size(259, 49);
             this.StrengthLabel.TabIndex = 2;
             this.StrengthLabel.Text = "Strength";
             this.StrengthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -299,13 +294,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AbilitiesTableLayoutPanel.SetColumnSpan(this.GenerateAbilitiesButton, 2);
-            this.GenerateAbilitiesButton.Location = new System.Drawing.Point(535, 424);
-            this.GenerateAbilitiesButton.Margin = new System.Windows.Forms.Padding(4);
+            this.GenerateAbilitiesButton.Location = new System.Drawing.Point(419, 346);
             this.GenerateAbilitiesButton.Name = "GenerateAbilitiesButton";
-            this.GenerateAbilitiesButton.Size = new System.Drawing.Size(427, 52);
+            this.GenerateAbilitiesButton.Size = new System.Drawing.Size(337, 48);
             this.GenerateAbilitiesButton.TabIndex = 2;
             this.GenerateAbilitiesButton.Text = "Generate Abilities";
             this.GenerateAbilitiesButton.UseVisualStyleBackColor = true;
+            this.GenerateAbilitiesButton.Click += new System.EventHandler(this.GenerateAbilitiesButton_Click);
             // 
             // EnduranceLabel
             // 
@@ -313,10 +308,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EnduranceLabel.AutoSize = true;
-            this.EnduranceLabel.Location = new System.Drawing.Point(4, 120);
-            this.EnduranceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.EnduranceLabel.Location = new System.Drawing.Point(3, 98);
             this.EnduranceLabel.Name = "EnduranceLabel";
-            this.EnduranceLabel.Size = new System.Drawing.Size(330, 60);
+            this.EnduranceLabel.Size = new System.Drawing.Size(259, 49);
             this.EnduranceLabel.TabIndex = 3;
             this.EnduranceLabel.Text = "Endurance";
             this.EnduranceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -327,10 +321,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.IntellectLabel.AutoSize = true;
-            this.IntellectLabel.Location = new System.Drawing.Point(4, 180);
-            this.IntellectLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.IntellectLabel.Location = new System.Drawing.Point(3, 147);
             this.IntellectLabel.Name = "IntellectLabel";
-            this.IntellectLabel.Size = new System.Drawing.Size(330, 60);
+            this.IntellectLabel.Size = new System.Drawing.Size(259, 49);
             this.IntellectLabel.TabIndex = 4;
             this.IntellectLabel.Text = "Intellect";
             this.IntellectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -341,10 +334,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EducationLabel.AutoSize = true;
-            this.EducationLabel.Location = new System.Drawing.Point(4, 240);
-            this.EducationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.EducationLabel.Location = new System.Drawing.Point(3, 196);
             this.EducationLabel.Name = "EducationLabel";
-            this.EducationLabel.Size = new System.Drawing.Size(330, 60);
+            this.EducationLabel.Size = new System.Drawing.Size(259, 49);
             this.EducationLabel.TabIndex = 5;
             this.EducationLabel.Text = "Education";
             this.EducationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -355,10 +347,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SocialstandingLable.AutoSize = true;
-            this.SocialstandingLable.Location = new System.Drawing.Point(4, 300);
-            this.SocialstandingLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SocialstandingLable.Location = new System.Drawing.Point(3, 245);
             this.SocialstandingLable.Name = "SocialstandingLable";
-            this.SocialstandingLable.Size = new System.Drawing.Size(330, 60);
+            this.SocialstandingLable.Size = new System.Drawing.Size(259, 49);
             this.SocialstandingLable.TabIndex = 7;
             this.SocialstandingLable.Text = "Social Standing";
             this.SocialstandingLable.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -371,10 +362,9 @@
             this.DexeterityDataLabel.AutoSize = true;
             this.DexeterityDataLabel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.DexeterityDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DexeterityDataLabel.Location = new System.Drawing.Point(342, 60);
-            this.DexeterityDataLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DexeterityDataLabel.Location = new System.Drawing.Point(268, 49);
             this.DexeterityDataLabel.Name = "DexeterityDataLabel";
-            this.DexeterityDataLabel.Size = new System.Drawing.Size(185, 60);
+            this.DexeterityDataLabel.Size = new System.Drawing.Size(145, 49);
             this.DexeterityDataLabel.TabIndex = 8;
             this.DexeterityDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -386,10 +376,9 @@
             this.EnduranceDataLabel.AutoSize = true;
             this.EnduranceDataLabel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.EnduranceDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EnduranceDataLabel.Location = new System.Drawing.Point(342, 120);
-            this.EnduranceDataLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.EnduranceDataLabel.Location = new System.Drawing.Point(268, 98);
             this.EnduranceDataLabel.Name = "EnduranceDataLabel";
-            this.EnduranceDataLabel.Size = new System.Drawing.Size(185, 60);
+            this.EnduranceDataLabel.Size = new System.Drawing.Size(145, 49);
             this.EnduranceDataLabel.TabIndex = 9;
             this.EnduranceDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -401,10 +390,9 @@
             this.IntellectDataLabel.AutoSize = true;
             this.IntellectDataLabel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.IntellectDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IntellectDataLabel.Location = new System.Drawing.Point(342, 180);
-            this.IntellectDataLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.IntellectDataLabel.Location = new System.Drawing.Point(268, 147);
             this.IntellectDataLabel.Name = "IntellectDataLabel";
-            this.IntellectDataLabel.Size = new System.Drawing.Size(185, 60);
+            this.IntellectDataLabel.Size = new System.Drawing.Size(145, 49);
             this.IntellectDataLabel.TabIndex = 11;
             this.IntellectDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -416,10 +404,9 @@
             this.EducationDataLabel.AutoSize = true;
             this.EducationDataLabel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.EducationDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EducationDataLabel.Location = new System.Drawing.Point(342, 240);
-            this.EducationDataLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.EducationDataLabel.Location = new System.Drawing.Point(268, 196);
             this.EducationDataLabel.Name = "EducationDataLabel";
-            this.EducationDataLabel.Size = new System.Drawing.Size(185, 60);
+            this.EducationDataLabel.Size = new System.Drawing.Size(145, 49);
             this.EducationDataLabel.TabIndex = 10;
             this.EducationDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -431,31 +418,52 @@
             this.SocialstandingDataLabel.AutoSize = true;
             this.SocialstandingDataLabel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.SocialstandingDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SocialstandingDataLabel.Location = new System.Drawing.Point(342, 300);
-            this.SocialstandingDataLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SocialstandingDataLabel.Location = new System.Drawing.Point(268, 245);
             this.SocialstandingDataLabel.Name = "SocialstandingDataLabel";
-            this.SocialstandingDataLabel.Size = new System.Drawing.Size(185, 60);
+            this.SocialstandingDataLabel.Size = new System.Drawing.Size(145, 49);
             this.SocialstandingDataLabel.TabIndex = 12;
             this.SocialstandingDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // SkillsPage
             // 
-            this.SkillsPage.Location = new System.Drawing.Point(4, 38);
-            this.SkillsPage.Margin = new System.Windows.Forms.Padding(4);
+            this.SkillsPage.Controls.Add(this.tableLayoutPanel1);
+            this.SkillsPage.Location = new System.Drawing.Point(4, 33);
             this.SkillsPage.Name = "SkillsPage";
-            this.SkillsPage.Size = new System.Drawing.Size(990, 498);
+            this.SkillsPage.Size = new System.Drawing.Size(776, 410);
             this.SkillsPage.TabIndex = 2;
             this.SkillsPage.Text = "Skills";
             this.SkillsPage.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.GenerateSkillsButton, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.FirstSkillLabel, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.SecondSkillLabel, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.FirstSkillDataLabel, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.SecondSkillDataLabel, 1, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(763, 312);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // CharacterSheetPage
             // 
             this.CharacterSheetPage.Controls.Add(this.MainToolStrip);
             this.CharacterSheetPage.Controls.Add(this.MainMenuStrip);
-            this.CharacterSheetPage.Location = new System.Drawing.Point(4, 38);
-            this.CharacterSheetPage.Margin = new System.Windows.Forms.Padding(4);
+            this.CharacterSheetPage.Location = new System.Drawing.Point(4, 33);
             this.CharacterSheetPage.Name = "CharacterSheetPage";
-            this.CharacterSheetPage.Size = new System.Drawing.Size(990, 498);
+            this.CharacterSheetPage.Size = new System.Drawing.Size(776, 410);
             this.CharacterSheetPage.TabIndex = 3;
             this.CharacterSheetPage.Text = "Character Sheet";
             this.CharacterSheetPage.UseVisualStyleBackColor = true;
@@ -468,9 +476,9 @@
             this.saveToolStripButton,
             this.toolStripSeparator6,
             this.helpToolStripButton});
-            this.MainToolStrip.Location = new System.Drawing.Point(0, 28);
+            this.MainToolStrip.Location = new System.Drawing.Point(0, 24);
             this.MainToolStrip.Name = "MainToolStrip";
-            this.MainToolStrip.Size = new System.Drawing.Size(990, 27);
+            this.MainToolStrip.Size = new System.Drawing.Size(776, 27);
             this.MainToolStrip.TabIndex = 1;
             this.MainToolStrip.Text = "toolStrip1";
             // 
@@ -514,8 +522,7 @@
             this.helpToolStripMenuItem});
             this.MainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MainMenuStrip.Name = "MainMenuStrip";
-            this.MainMenuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.MainMenuStrip.Size = new System.Drawing.Size(990, 28);
+            this.MainMenuStrip.Size = new System.Drawing.Size(776, 24);
             this.MainMenuStrip.TabIndex = 0;
             this.MainMenuStrip.Text = "menuStrip1";
             // 
@@ -527,7 +534,7 @@
             this.saveToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // openToolStripMenuItem
@@ -536,13 +543,13 @@
             this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
             this.openToolStripMenuItem.Text = "&Open";
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(170, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(147, 6);
             // 
             // saveToolStripMenuItem
             // 
@@ -550,13 +557,13 @@
             this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
             this.saveToolStripMenuItem.Text = "&Save";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -565,21 +572,20 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(134, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
             // NextButton
             // 
-            this.NextButton.Location = new System.Drawing.Point(809, 567);
-            this.NextButton.Margin = new System.Windows.Forms.Padding(4);
+            this.NextButton.Location = new System.Drawing.Point(636, 469);
             this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(173, 76);
+            this.NextButton.Size = new System.Drawing.Size(136, 63);
             this.NextButton.TabIndex = 1;
             this.NextButton.Text = "Next";
             this.NextButton.UseVisualStyleBackColor = true;
@@ -587,23 +593,91 @@
             // 
             // BackButton
             // 
-            this.BackButton.Location = new System.Drawing.Point(15, 567);
-            this.BackButton.Margin = new System.Windows.Forms.Padding(4);
+            this.BackButton.Location = new System.Drawing.Point(12, 469);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(173, 76);
+            this.BackButton.Size = new System.Drawing.Size(136, 63);
             this.BackButton.TabIndex = 1;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
+            // FirstSkillLabel
+            // 
+            this.FirstSkillLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FirstSkillLabel.AutoSize = true;
+            this.FirstSkillLabel.Location = new System.Drawing.Point(3, 0);
+            this.FirstSkillLabel.Name = "FirstSkillLabel";
+            this.FirstSkillLabel.Size = new System.Drawing.Size(184, 78);
+            this.FirstSkillLabel.TabIndex = 0;
+            this.FirstSkillLabel.Text = "First";
+            this.FirstSkillLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SecondSkillLabel
+            // 
+            this.SecondSkillLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SecondSkillLabel.AutoSize = true;
+            this.SecondSkillLabel.Location = new System.Drawing.Point(3, 78);
+            this.SecondSkillLabel.Name = "SecondSkillLabel";
+            this.SecondSkillLabel.Size = new System.Drawing.Size(184, 78);
+            this.SecondSkillLabel.TabIndex = 0;
+            this.SecondSkillLabel.Text = "Second";
+            this.SecondSkillLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // GenerateSkillsButton
+            // 
+            this.GenerateSkillsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.GenerateSkillsButton, 2);
+            this.GenerateSkillsButton.Location = new System.Drawing.Point(383, 237);
+            this.GenerateSkillsButton.Name = "GenerateSkillsButton";
+            this.GenerateSkillsButton.Size = new System.Drawing.Size(377, 72);
+            this.GenerateSkillsButton.TabIndex = 1;
+            this.GenerateSkillsButton.Text = "Generate Skills";
+            this.GenerateSkillsButton.UseVisualStyleBackColor = true;
+            this.GenerateSkillsButton.Click += new System.EventHandler(this.GenerateSkillsButton_Click);
+            // 
+            // FirstSkillDataLabel
+            // 
+            this.FirstSkillDataLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FirstSkillDataLabel.AutoSize = true;
+            this.FirstSkillDataLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.FirstSkillDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tableLayoutPanel1.SetColumnSpan(this.FirstSkillDataLabel, 3);
+            this.FirstSkillDataLabel.Location = new System.Drawing.Point(193, 0);
+            this.FirstSkillDataLabel.Name = "FirstSkillDataLabel";
+            this.FirstSkillDataLabel.Size = new System.Drawing.Size(567, 78);
+            this.FirstSkillDataLabel.TabIndex = 0;
+            this.FirstSkillDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // SecondSkillDataLabel
+            // 
+            this.SecondSkillDataLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SecondSkillDataLabel.AutoSize = true;
+            this.SecondSkillDataLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.SecondSkillDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tableLayoutPanel1.SetColumnSpan(this.SecondSkillDataLabel, 3);
+            this.SecondSkillDataLabel.Location = new System.Drawing.Point(193, 78);
+            this.SecondSkillDataLabel.Name = "SecondSkillDataLabel";
+            this.SecondSkillDataLabel.Size = new System.Drawing.Size(567, 78);
+            this.SecondSkillDataLabel.TabIndex = 0;
+            this.SecondSkillDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // CharacterGenerationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
-            this.ClientSize = new System.Drawing.Size(998, 678);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.MainTabControl);
-            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "CharacterGenerationForm";
             this.Text = "Character Generator";
             this.MainTabControl.ResumeLayout(false);
@@ -613,6 +687,9 @@
             this.AbilityPage.ResumeLayout(false);
             this.AbilitiesTableLayoutPanel.ResumeLayout(false);
             this.AbilitiesTableLayoutPanel.PerformLayout();
+            this.SkillsPage.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.CharacterSheetPage.ResumeLayout(false);
             this.CharacterSheetPage.PerformLayout();
             this.MainToolStrip.ResumeLayout(false);
@@ -665,5 +742,11 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button GenerateSkillsButton;
+        private System.Windows.Forms.Label FirstSkillLabel;
+        private System.Windows.Forms.Label SecondSkillLabel;
+        private System.Windows.Forms.Label FirstSkillDataLabel;
+        private System.Windows.Forms.Label SecondSkillDataLabel;
     }
 }
