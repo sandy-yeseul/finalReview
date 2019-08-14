@@ -43,6 +43,10 @@ namespace finalReview
             {
                 MainTabControl.SelectedIndex++;
             }
+            if (MainTabControl.SelectedIndex == 3)
+            {
+                CreateCharacterSheet();
+            }
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -133,6 +137,131 @@ namespace finalReview
             SecondSkillLevelDataLabel.Text = secondSkillLev;
             ThirdSkillLevelDataLabel.Text = thirdSkillLev;
             FourthSkillLevelDataLabel.Text = fourthSkillLev;
+        }
+
+        private void NameDataLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CharacterGenerationForm_Load(object sender, EventArgs e)
+        {
+            
+        }
+        private void CreateCharacterSheet()
+        {
+            string name = Program.character.Identity.FirstName + " " +Program.character.Identity.LastName;
+            NameDataLabel.Text = name;
+
+            string abilities =
+                "Strength: " + Program.character.Strength + ", " +
+                "Dexterity: " + Program.character.Dexterity + ", " +
+                "Endurance: " + Program.character.Endurance + ", " +
+                "Intellect: " + Program.character.Intellect + ", " +
+                "Education: " + Program.character.Education + ", " +
+                "Social Standing: " + Program.character.SocialStanding;
+            AbilitiesDataLabel.Text = abilities;
+
+            string skills = 
+                FirstSkillNameDataLabel.Text + ": " + FirstSkillLevelDataLabel.Text + ", " +
+                SecondSkillNameDataLabel.Text + ": " + SecondSkillLevelDataLabel.Text + ", " +
+                ThirdSkillNameDataLabel.Text + ": " + ThirdSkillLevelDataLabel.Text + ", " +
+                FourthSkillNameDataLabel.Text + ": " + FourthSkillLevelDataLabel.Text ;
+            SkillsDataLabel.Text = skills;
+
+
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            // configure the file dialog
+            saveFileDialog.FileName = "CharacterSheet.txt";
+            saveFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            saveFileDialog.Filter = "Text Files (*.txt)|*.txt| All Files (*.*)|*.*";
+
+            // open the file dialog
+            var result = saveFileDialog.ShowDialog();
+            if (result != DialogResult.Cancel)
+            {
+                // open the stream for writing
+                using (StreamWriter outputStream = new StreamWriter(
+                    File.Open(saveFileDialog.FileName, FileMode.Create)))
+                {
+                    // write content - string type - to the file
+                    outputStream.WriteLine(Program.character.Identity.FirstName);
+                    outputStream.WriteLine(Program.character.Identity.LastName);
+                    outputStream.WriteLine(Program.character.Strength);
+                    outputStream.WriteLine(Program.character.Dexterity);
+                    outputStream.WriteLine(Program.character.Endurance);
+                    outputStream.WriteLine(Program.character.Intellect);
+                    outputStream.WriteLine(Program.character.Education);
+                    outputStream.WriteLine(Program.character.SocialStanding);
+                    outputStream.WriteLine(SkillsDataLabel.Text);
+
+
+                    // cleanup
+                    outputStream.Close();
+                    outputStream.Dispose();
+
+                    // give feedback to the user that the file has been saved
+                    // this is a "modal" form
+                    MessageBox.Show("File Saved...", "Saving File...",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            // configure the file dialog
+            openFileDialog.FileName = "CharacterSheet.txt";
+            openFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            openFileDialog.Filter = "Text Files (*.txt)|*.txt| All Files (*.*)|*.*";
+
+            // open the file dialog
+            var result = openFileDialog.ShowDialog();
+            if (result != DialogResult.Cancel)
+            {
+                try
+                {
+                    // Open the  streawm for reading
+                    using (StreamReader inputStream = new StreamReader(
+                        File.Open(openFileDialog.FileName, FileMode.Open)))
+                    {
+                        // read from the file
+                        Program.character.Identity.FirstName = inputStream.ReadLine();
+                        Program.character.Identity.LastName = inputStream.ReadLine();
+                        Program.character.Strength = inputStream.ReadLine();
+                        Program.student.id = int.Parse(inputStream.ReadLine());
+                        Program.student.StudentID = inputStream.ReadLine();
+                        Program.student.FirstName = inputStream.ReadLine();
+                        Program.student.LastName = inputStream.ReadLine();
+
+                        // cleanup
+                        inputStream.Close();
+                        inputStream.Dispose();
+                    }
+
+                    NextButton_Click(sender, e);
+                }
+                catch (IOException exception)
+                {
+
+                    Debug.WriteLine("ERROR: " + exception.Message);
+
+                    MessageBox.Show("ERROR: " + exception.Message, "ERROR",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (FormatException exception)
+                {
+                    Debug.WriteLine("ERROR: " + exception.Message);
+
+                    MessageBox.Show("ERROR: " + exception.Message + "\n\nPlease select the appropriate file type", "ERROR",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
