@@ -15,7 +15,8 @@ namespace finalReview
 {
     public partial class CharacterGenerationForm : finalReview.Views.MasterForm
     {
-        public CharacterGenerationForm()
+
+       public CharacterGenerationForm()
         {
             InitializeComponent();
         }
@@ -56,18 +57,20 @@ namespace finalReview
         /// <param name="e"></param>
         private void GeneratesNameButton_Click(object sender, EventArgs e)
         {
-
-            string[] firstNames = File.ReadAllLines(@"..\..\Data\firstNames.txt");
-            string[] lastNames = File.ReadAllLines(@"..\..\Data\lastNames.txt");
+            string[] firstNameArray = File.ReadAllLines(@"..\..\Data\firstNames.txt");
+            string[] lastNameArray = File.ReadAllLines(@"..\..\Data\lastNames.txt");
 
             Random rand = new Random();
-            string fName = firstNames[rand.Next(0, firstNames.Length - 1)];
-            string lName = lastNames[rand.Next(0, lastNames.Length - 1)];
+            string fName = firstNameArray[rand.Next(0, firstNameArray.Length - 1)];
+            string lName = lastNameArray[rand.Next(0, lastNameArray.Length - 1)];
 
             FirstNameDataLabel.Text = fName;
             LastNameDataLabel.Text = lName;
 
-            CharacterPortfolio characterPortfolio = new CharacterPortfolio(fName, lName);
+            Program.character.Identity.FirstName = fName;
+            Program.character.Identity.LastName = lName;
+            FirstNameDataLabel.Text = Program.character.Identity.FirstName;
+            LastNameDataLabel.Text = Program.character.Identity.LastName;
 
         }
         /// <summary>
@@ -79,19 +82,27 @@ namespace finalReview
         {
             Random rand = new Random();
 
-            string strength = ""+ rand.Next(0, 10);
-            StrengthDataLabel.Text = strength;
-            string dexeterity = "" + rand.Next(0, 10);
-            DexeterityDataLabel.Text = dexeterity;
-            string endurance = "" + rand.Next(0, 10);
-            EnduranceDataLabel.Text = endurance;
-            string intellect = "" + rand.Next(0, 10);
-            IntellectDataLabel.Text = intellect;
-            string education = "" + rand.Next(0, 10);
-            EducationDataLabel.Text = education;
-            string socialStanding = "" + rand.Next(0, 10);
-            SocialstandingDataLabel.Text = socialStanding;
-            CharacterPortfolio characterPortfolio = new CharacterPortfolio(strength, dexeterity, endurance, intellect, education, socialStanding);
+            string strength = ""+ rand.Next(1, 16);
+            string dexeterity = "" + rand.Next(1, 16);
+            string endurance = "" + rand.Next(1, 16);
+            string intellect = "" + rand.Next(1, 16);
+            string education = "" + rand.Next(1, 16);
+            string socialStanding = "" + rand.Next(1, 16);
+
+            Program.character.Strength = strength;
+            Program.character.Dexterity = dexeterity;
+            Program.character.Endurance = endurance;
+            Program.character.Intellect = intellect;
+            Program.character.Education = education;
+            Program.character.SocialStanding = socialStanding;
+
+            StrengthDataLabel.Text = Program.character.Strength;
+            DexeterityDataLabel.Text = Program.character.Dexterity;
+            EnduranceDataLabel.Text = Program.character.Endurance;
+            IntellectDataLabel.Text = Program.character.Intellect;
+            EducationDataLabel.Text = Program.character.Education;
+            SocialstandingDataLabel.Text = Program.character.SocialStanding;
+
         }
         /// <summary>
         /// This is event handler for generating random skills
@@ -102,23 +113,26 @@ namespace finalReview
         {
             Random rand = new Random();
             string[] skills = File.ReadAllLines(@"..\..\Data\skills.txt");
-            string firstSkillNam = skills[rand.Next(0, skills.Length - 1)];
-            string secondSkillNam = skills[rand.Next(0, skills.Length - 1)];
-            if (secondSkillNam == firstSkillNam)
-            {
-                while(secondSkillNam != firstSkillNam)
-                {
-                    secondSkillNam = skills[rand.Next(0, skills.Length - 1)];
-                }
-            }
-            string firstSkillLev = "" + rand.Next(0, 10);
-            string secondSkillLev = "" + rand.Next(0, 10);
-            FirstSkillNameDataLabel.Text = firstSkillNam;
+            string firstSkillName = skills[rand.Next(0, skills.Length - 1)];
+            string secondSkillName = skills[rand.Next(0, skills.Length - 1)];
+            string thirdSkillName = skills[rand.Next(0, skills.Length - 1)];
+            string fourthSkillName = skills[rand.Next(0, skills.Length - 1)];
+            
+
+            string firstSkillLev = "" + rand.Next(1, 16);
+            string secondSkillLev = "" + rand.Next(1, 16);
+            string thirdSkillLev = "" + rand.Next(1, 16);
+            string fourthSkillLev = "" + rand.Next(1, 16);
+
+            FirstSkillNameDataLabel.Text = firstSkillName;
+            SecondSkillNameDataLabel.Text = secondSkillName;
+            ThirdSkillNameDataLabel.Text = thirdSkillName;
+            FourthSkillNameDataLabel.Text = fourthSkillName;
+
             FirstSkillLevelDataLabel.Text = firstSkillLev;
-            SecondSkillNameDataLabel.Text = secondSkillNam;
             SecondSkillLevelDataLabel.Text = secondSkillLev;
-            CharacterPortfolio characterPortfolio = new CharacterPortfolio(firstSkillNam, firstSkillLev);
-            characterPortfolio = new CharacterPortfolio(secondSkillNam, secondSkillLev);
+            ThirdSkillLevelDataLabel.Text = thirdSkillLev;
+            FourthSkillLevelDataLabel.Text = fourthSkillLev;
         }
     }
 }

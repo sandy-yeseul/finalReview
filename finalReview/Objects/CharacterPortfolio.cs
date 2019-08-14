@@ -27,24 +27,10 @@ namespace finalReview.Objects
         List<Skill> Skills;
 
         //constructor
-        public CharacterPortfolio(string fName, string lName)
+        public CharacterPortfolio()
         {
-            this.Identity = new Identity(fName, lName);
-        }
-        public CharacterPortfolio(string strength, string dexterity, string endurance, string intellect, string education, string socialStanding)
-        {
-            Strength = strength;
-            Dexterity = dexterity;
-            Endurance = endurance;
-            Intellect = intellect;
-            Education = education;
-            SocialStanding = socialStanding;
-        }
-        public CharacterPortfolio(string name, int level)
-        {
+            this.Identity = new Identity();
             Skills = new List<Skill>();
-            Skill skill = new Skill(name, level);
-            Skills.Add(skill);
         }
     }
 }
