@@ -56,7 +56,7 @@ namespace finalReview
         }
         /// <summary>
         /// This is event handler for generating names
-        /// Read the files and create array, generate random numbers and make random name.
+        /// Read the files and create array, generate random numbers and make random name  and saving to Program.Character
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -79,7 +79,8 @@ namespace finalReview
 
         }
         /// <summary>
-        /// This is event handler to generate random abilities level
+        /// This is event handler to generate random abilities level and saving to Program.Character
+        /// </summary>
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -149,6 +150,9 @@ namespace finalReview
         {
             
         }
+        /// <summary>
+        /// This is an generating Character Sheet
+        /// </summary>
         private void CreateCharacterSheet()
         {
             string name = Program.character.Identity.FirstName + " " +Program.character.Identity.LastName;
@@ -172,7 +176,11 @@ namespace finalReview
 
 
         }
-
+        /// <summary>
+        /// This is the event handler to save the file(BUT can I just copy your code to mine?)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -212,7 +220,11 @@ namespace finalReview
                 }
             }
         }
-
+        /// <summary>
+        /// This is the event handler to open the file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -266,7 +278,11 @@ namespace finalReview
                 }
             }
         }
-
+        /// <summary>
+        /// this is the evnet handler to open about form 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Program.aboutBox.ShowDialog();
