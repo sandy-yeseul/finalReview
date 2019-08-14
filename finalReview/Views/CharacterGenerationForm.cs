@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Text;
@@ -234,10 +235,12 @@ namespace finalReview
                         Program.character.Identity.FirstName = inputStream.ReadLine();
                         Program.character.Identity.LastName = inputStream.ReadLine();
                         Program.character.Strength = inputStream.ReadLine();
-                        Program.student.id = int.Parse(inputStream.ReadLine());
-                        Program.student.StudentID = inputStream.ReadLine();
-                        Program.student.FirstName = inputStream.ReadLine();
-                        Program.student.LastName = inputStream.ReadLine();
+                        Program.character.Dexterity = inputStream.ReadLine();
+                        Program.character.Endurance = inputStream.ReadLine();
+                        Program.character.Intellect = inputStream.ReadLine();
+                        Program.character.Education = inputStream.ReadLine();
+                        Program.character.SocialStanding = inputStream.ReadLine();
+                        SkillsDataLabel.Text = inputStream.ReadLine();
 
                         // cleanup
                         inputStream.Close();
@@ -262,6 +265,11 @@ namespace finalReview
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Program.aboutBox.ShowDialog();
         }
     }
 }

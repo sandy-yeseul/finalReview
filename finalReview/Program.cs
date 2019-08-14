@@ -13,6 +13,7 @@ namespace finalReview
         //
         public static CharacterGenerationForm characterForm;
         public static CharacterPortfolio character;
+        public static AboutBox aboutBox;
 
         /// <summary>
         /// The main entry point for the application.
@@ -25,6 +26,7 @@ namespace finalReview
 
             characterForm = new CharacterGenerationForm();
             character = new CharacterPortfolio();
+            aboutBox = new AboutBox();
 
             Application.Run(characterForm);
         }

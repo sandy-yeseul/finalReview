@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("finalReview")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Final test for COMP123 S2019. Creating character sheet page")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Centennial College")]
 [assembly: AssemblyProduct("finalReview")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyCopyright("Copyright ©  2019 Yeseul Kang")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
